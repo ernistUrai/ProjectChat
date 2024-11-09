@@ -1,0 +1,18 @@
+{% extends 'home.html' %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+    <h1>Inbox</h1>
+    <ul>
+        {% for message in messages %}
+            <li>
+                <strong>From:</strong> {{ message.sender.username }} - 
+                <strong>Message:</strong> {{ message.text }} - 
+                <strong>Time:</strong> {{ message.created_at }} - 
+                <strong>Status:</strong> {% if message.is_read %} Read {% else %} Unread {% endif %}
+                <a href="{% url 'read_message' message.id %}">Mark as read</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

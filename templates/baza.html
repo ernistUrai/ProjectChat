@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ky" data-theme="black">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жеке Баракча</title>
+    <link rel="stylesheet" href="{% static 'baza.css' %}">
+    <link rel="stylesheet" href="{% static 'sendmessage.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <nav class="navigation">
+                <div class="logo">
+                    <img src="https://avatars.mds.yandex.net/i?id=5cd3d60c43af5558ec2b717f3979b88862d61f3d-10805591-images-thumbs&n=13" alt="Логотип">
+                </div>
+                <button class="menu-toggle">Меню</button>
+                <ul class="menu">
+                    <li><a href="/">Башкы</a></li>
+                    <li><a href="#">Проекттер</a></li>
+                    <li><a href="/admin">Байланыш</a></li>
+                    <li><a href="{% url 'register' %}">Регистрация</a></li> 
+                    <li><a href="{% url 'login' %}">Профил</a></li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-wrapper">
+            <div class="centered-content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <h3>Информация</h3>
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Сервисы</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Продукты</h3>
+                    <ul>
+                        <li><a href="#">Основной продукт</a></li>
+                        <li><a href="#">Дополнительные функции</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Поддержка</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Обратная связь</a></li>
+                        <li><a href="#">Техническая поддержка</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Менин Жеке Баракчам. Все права защищены.</p>
+                <nav class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

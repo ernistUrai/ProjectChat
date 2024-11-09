@@ -1,0 +1,135 @@
+{% extends 'baza.html' %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .profile-card {
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .profile-picture {
+            border: 3px solid #007bff;
+        }
+        .social-icon {
+            font-size: 1.5rem;
+            color: #007bff;
+            transition: color 0.3s;
+        }
+        .social-icon:hover {
+            color: #0056b3;
+        }
+        .btn {
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <div class="col-md-6 text-center">
+                <a href="{% url 'logout' %}" class="btn btn-danger mb-2">Чыгуу</a>
+                <a href="{% url 'send_direct_message' %}" class="btn btn-primary mb-2">Собшение</a>
+                <img src="https://avatars.mds.yandex.net/i?id=021007a24e8ebbecae2fa56cce3a2e8d14e2e844-5667701-images-thumbs&n=13" alt="Profile Picture" class="profile-picture img-fluid rounded-circle mb-4">
+            </div>
+            <div class="col-md-6">
+                <div class="card profile-card mb-4">
+                    <div class="card-header">
+                        <h1 class="card-title">{{ user.username }}</h1>
+                        <button class="btn btn-warning edit-profile" data-toggle="modal" data-target="#fullViewModal">Edit Profile</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="info-section">
+                            <p><strong>Email:</strong> {{ user.email }}</p>
+                            <p><strong>Phone:</strong> 123-456-7890</p>
+                            <p><strong>Location:</strong> New York City, USA</p>
+                        </div>
+
+                        <hr class="mb-4">
+
+                        <div class="about-me">
+                            <h4>About Me</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                        </div>
+
+                        <hr class="mb-4">
+
+                        <div class="social-links">
+                            <h4>Social Links</h4>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="#" class="social-link" target="_blank"><i class="fab fa-facebook-f social-icon"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="social-link" target="_blank"><i class="fab fa-twitter social-icon"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="social-link" target="_blank"><i class="fab fa-instagram social-icon"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-info view-full-profile" data-toggle="modal" data-target="#fullViewModal">View Full Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div ```html
+    </div>
+
+    <!-- Модальное окно для полного просмотра профиля -->
+    <div class="modal fade" id="fullViewModal" tabindex="-1" aria-labelledby="fullViewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="fullViewModalLabel">Full Profile View</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="https://avatars.mds.yandex.net/i?id=021007a24e8ebbecae2fa56cce3a2e8d14e2e844-5667701-images-thumbs&n=13" alt="Profile Picture" class="profile-picture img-fluid rounded-circle mb-4">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="info-section">
+                                <p><strong>Email:</strong> {{ user.email }}</p>
+                                <p><strong>Phone:</strong> 123-456-7890</p>
+                                <p><strong>Location:</strong> New York City, USA</p>
+                            </div>
+
+                            <hr class="mb-4">
+
+                            <div class="about-me">
+                                <h4>About Me</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                            </div>
+
+                            <hr class="mb-4">
+
+                            <div class="social-links">
+                                <h4>Social Links</h4>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="#" class="social-link" target="_blank"><i class="fab fa-facebook-f social-icon"></i></a></li>
+                                    <li class="list-inline-item"><a href="#" class="social-link" target="_blank"><i class="fab fa-twitter social-icon"></i></a></li>
+                                    <li class="list-inline-item"><a href="#" class="social-link" target="_blank"><i class="fab fa-instagram social-icon"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

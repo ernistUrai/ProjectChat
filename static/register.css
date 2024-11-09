@@ -1,0 +1,56 @@
+.register-container {
+    background-color: #ffffff; /* Белый фон для контейнера */
+    border-radius: 8px; /* Скругление углов */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень для эффекта глубины */
+    padding: 30px; /* Внутренние отступы */
+    margin: 50px auto; /* Центрирование контейнера */
+    max-width: 400px; /* Максимальная ширина контейнера */
+    text-align: center; /* Центрирование текста */
+}
+
+h2 {
+    color: #333; /* Цвет заголовка */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.messages {
+    margin-bottom: 15px; /* Отступ снизу для сообщений */
+}
+
+.message {
+    color: #d9534f; /* Цвет сообщений об ошибках */
+    margin: 5px 0; /* Отступы для сообщений */
+}
+
+form {
+    display: flex; /* Используем flexbox для упрощения размещения элементов */
+    flex-direction: column; /* Элементы будут располагаться вертикально */
+}
+
+button {
+    background-color: #007bff; /* Цвет кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем границы */
+    border-radius: 5px; /* Скругление углов кнопки */
+    padding: 10px; /* Внутренние отступы */
+    margin-top: 10px; /* Отступ сверху */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+}
+
+button:hover {
+    background-color: #0056b3; /* Цвет кнопки при наведении */
+}
+
+.login-link {
+    margin-top: 15px; /* Отступ сверху для ссылки на вход */
+}
+
+.login-link a {
+    color: #007bff; /* Цвет ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.login-link a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
